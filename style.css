@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --gradient: linear-gradient(
+    to right,
+    hsl(236, 72%, 79%) to hsl(237, 63%, 64%)
+  );
+  --lightBlue: hsl(240, 78%, 98%);
+  --veryLightBlue: hsl(234, 14%, 74%);
+  --darkBlue: hsl(233, 13%, 49%);
+  --graylishBlue: hsl(232, 13%, 33%);
+}
+
+body {
+  background: no-repeat url(./images/bg-top.svg), var(--lightBlue);
+  background-size: 20em;
+  background-position-x: calc(100% + 10.5em);
+}
+
+main {
+  text-align: center;
+  height: 100vh;
+}
+
+#container {
+  position: relative;
+}
+
+h1 {
+  color: var(--darkBlue);
+  margin: 5rem 5rem 1rem;
+}
+
+h3 {
+  margin: 0.5rem;
+  font-size: 1rem;
+  padding: 15px;
+}
+
+.break {
+  padding: 20px;
+}
+
+.switcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3.5rem;
+}
+
+.switcher > p {
+  padding: 1.5rem;
+}
+
+.card,
+.card1,
+.card2 {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 30rem;
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  transition: 1s ease-in-out;
+}
+
+.dollar {
+  font-size: 4em;
+  padding-bottom: 20px;
+  color: var(--graylishBlue);
+}
+
+.card > p.desc,
+.card1 > p.desc,
+.card2 > p.desc {
+  margin: 1rem;
+}
+
+hr {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dollarS {
+  font-size: 2rem;
+}
+
+.card > button,
+.card1 > button,
+.card2 > button {
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  width: 80%;
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.card > .btn:hover,
+.card1 > .btn1:hover,
+.card2 > .btn2:hover {
+  background: transparent;
+  color: hsl(239, 87%, 77%);
+  border: hsl(239, 87%, 77%) solid 2px;
+}
+
+.card.active > .dollar,
+.card1.active > .dollar,
+.card2.active > .dollar {
+  color: #fff;
+}
+
+.card.active,
+.card1.active,
+.card2.active {
+  background-color: hsl(239, 87%, 77%);
+  height: 40rem;
+  color: #fff;
+  font-size: 20px;
+}
+
+.card.active > .btn,
+.card1.active > .btn1,
+.card2.active > .btn2 {
+  color: #fff;
+  background: transparent;
+  border: #fff solid 2px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-color: hsl(237, 63%, 64%);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background-color: #ccc;
+} */
+
+@media only screen and (min-width: 1300px) {
+  body {
+    background: no-repeat url(./images/bg-top.svg);
+    background-color: var(--lightBlue);
+    background-size: 25em;
+    background-position-x: 100%;
+
+    overflow: hidden;
+  }
+
+  .card-container {
+    display: flex;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card,
+  .card1,
+  .card2 {
+    display: block;
+    flex-direction: row;
+    width: 20%;
+    padding: 10px;
+    margin: 0;
+  }
+
+  .break {
+    padding: 0;
+  }
+}

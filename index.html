@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | [Pricing-Component]</title>
+  </head>
+  <body>
+    <main>
+      <div id="container">
+        <header>
+          <h1>Our Pricing</h1>
+        </header>
+        <div class="switcher">
+          <p>Annually</p>
+          <label class="switch">
+            <input
+              type="checkbox"
+              class="switch"
+              id="switchID"
+              onclick="ifChecked()" />
+            <span class="slider round"></span>
+          </label>
+          <p>Monthly</p>
+        </div>
+        <div class="card-container">
+          <div class="card">
+            <h3>Basic</h3>
+            <p class="dollar">
+              <span class="dollarS">&dollar;</span
+              ><span class="price">199.99</span>
+            </p>
+            <hr />
+            <p class="desc">500 GB Storage</p>
+            <hr />
+            <p class="desc">2 Users Allowed</p>
+            <hr />
+            <p class="desc">Send up to 3</p>
+            <hr />
+            <button class="btn">Learn More</button>
+          </div>
+          <div class="break"></div>
+          <div class="card1">
+            <h3>Professional</h3>
+            <p class="dollar">
+              <span class="dollarS">&dollar;</span
+              ><span class="price1">249.99</span>
+            </p>
+            <hr />
+            <p class="desc">1 TB Storage</p>
+            <hr />
+            <p class="desc">5 Users Allowed</p>
+            <hr />
+            <p class="desc">Send up to 10 GB</p>
+            <hr />
+            <button class="btn1">Learn More</button>
+          </div>
+          <div class="break"></div>
+          <div class="card2">
+            <h3>Master</h3>
+            <p class="dollar">
+              <span class="dollarS">&dollar;</span
+              ><span class="price2">399.99</span>
+            </p>
+            <hr />
+            <p class="desc">2 TB Storage</p>
+            <hr />
+            <p class="desc">10 Users Allowed</p>
+            <hr />
+            <p class="desc">Send up to 20 GB</p>
+            <hr />
+            <button class="btn2">Learn More</button>
+          </div>
+        </div>
+      </div>
+      <!-- <footer>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </footer> -->
+    </main>
+    <!-- &dollar;399.99 &dollar;249.99 &dollar;199.99 -->
+    <script>
+      const check = document.getElementById("switchID");
+      const price = document.querySelector(".price");
+      const price1 = document.querySelector(".price1");
+      const price2 = document.querySelector(".price2");
+      const btn = document.querySelector(".btn");
+      const btn1 = document.querySelector(".btn1");
+      const btn2 = document.querySelector(".btn2");
+      const card = document.querySelector(".card");
+      const card1 = document.querySelector(".card1");
+      const card2 = document.querySelector(".card2");
+      const Arr = ["19.99", "49.99", "39.99"];
+      const Arr1 = ["199.99", "249.99", "399.99"];
+
+      function ifChecked() {
+        if (check.checked == true) {
+          price.innerHTML = Arr[0];
+          price1.innerHTML = Arr[1];
+          price2.innerHTML = Arr[2];
+        } else {
+          price.innerHTML = Arr1[0];
+          price1.innerHTML = Arr1[1];
+          price2.innerHTML = Arr1[2];
+        }
+      }
+
+      btn.addEventListener("click", () => {
+        card.classList.toggle("active");
+        card1.classList.remove("active");
+        card2.classList.remove("active");
+      });
+
+      btn1.addEventListener("click", () => {
+        card1.classList.toggle("active");
+        card.classList.remove("active");
+        card2.classList.remove("active");
+      });
+
+      btn2.addEventListener("click", () => {
+        card2.classList.toggle("active");
+        card.classList.remove("active");
+        card1.classList.remove("active");
+      });
+    </script>
+  </body>
+</html>
